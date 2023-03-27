@@ -38,8 +38,8 @@ const dispatch=useDispatch()
         >
           {title}
         </Checkbox>
-        <Text>Total Time Spent:{tasks && totalTime(tasks)} Hours</Text>
-        <AddTaskModal id={id} />
+        {tasks.length>0?<Text>Total Time Spent:{tasks && totalTime(tasks)} Hours</Text>:""}
+        <AddTaskModal id={id} title={title} />
         <EditModal id={id} />
         <Button onClick={() => dispatch(handleDelete(id))}>
           <img src="https://img.icons8.com/material-outlined/24/null/delete-forever.png" />

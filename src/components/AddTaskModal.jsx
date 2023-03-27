@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../redux/actions";
 
-export default function AddTaskModal({id}) {
+export default function AddTaskModal({id,title}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [taskDetails,setTaskDetails]=useState({
     title:"",
@@ -20,7 +20,7 @@ export default function AddTaskModal({id}) {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Stack gap="20px">
