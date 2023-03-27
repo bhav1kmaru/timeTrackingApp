@@ -23,7 +23,7 @@ const dispatch=useDispatch()
       <Flex
         justifyContent={"space-around"}
         padding="10px"
-        backgroundColor="#9E4784"
+        backgroundColor="#7AA874"
         color="white"
         borderRadius="15px"
         border="2px solid"
@@ -38,7 +38,7 @@ const dispatch=useDispatch()
         >
           {title}
         </Checkbox>
-        <Text>Total Time Spent:{tasks && totalTime(tasks)}     Hours</Text>
+        <Text>Total Time Spent:{tasks && totalTime(tasks)} Hours</Text>
         <AddTaskModal id={id} />
         <EditModal id={id} />
         <Button onClick={() => dispatch(handleDelete(id))}>
@@ -50,13 +50,14 @@ const dispatch=useDispatch()
         <Text>afhafajfafj</Text>
         <Text>3 hours</Text>
       </Flex> */}
-      {tasks && tasks.map((task,i) => (
-        <Flex justifyContent='space-between'>
-          <Text>{`${i+1}. ${task.title}`}</Text>
-          <Text>{`${task.description}`}</Text>
-          <Text>{`Time Spent:${task.time} hours`}</Text>
-        </Flex>
-      ))}
+      {tasks &&
+        tasks.map((task, i) => (
+          <Flex justifyContent="space-between">
+            <Text>{`${i + 1}. ${task.title}`}</Text>
+            <Text>{`${task.description}`}</Text>
+            <Text>{`Time Spent:${task.time} hours`}</Text>
+          </Flex>
+        ))}
     </Stack>
   );
 }

@@ -20,8 +20,9 @@ export default function EditModal({id}) {
   const dispatch=useDispatch()
   return (
     <>
-      <Button onClick={onOpen}>
+      <Button onClick={onOpen} color='black'>
         <img src="https://img.icons8.com/ios-glyphs/30/null/edit-row.png" />
+        Edit
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
